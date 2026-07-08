@@ -56,7 +56,10 @@ SET peso = 70.00;
 --Delete - excluindo um dado específico da tabela
 
 DELETE FROM cliente
-WHERE cpf = 12345678901
+WHERE cpf = 12345678901;
+
+DELETE FROM cliente
+WHERE TABLE = 12345678901;
 
 --Deletando a tabela cliente
 DROP TABLE cliente;
