@@ -1,0 +1,81 @@
+para iniciar o mongodb no cmd digite:
+mongosh
+
+para criar um banco de dados:
+use primeirobanco
+
+Para criar uma collection:
+db.primeiracollection.insertOne({ nome: "Mahtheus", idade: 30})
+
+Para verificar os bancos que existem:
+show dbs
+
+para encontrar o dado que foi gravado na collection:
+db.primeiracollection.findOne({})
+
+Vamos inserir mais um dado, nessa mesma collection:
+db.primeiracollection.insertOne({nome: "João", idade: 32, profissao: "programador"})
+
+Para ver todos os dados que estão na collection:
+db.primeiracollection.find()
+
+Criando um banco de dados:
+use crud
+
+Criando collection e document:
+db.create.insertOne({ nome: "wecton", idade: 20, trabalha: true, hobbies: ["jogar futebol", "cinema"]})
+
+criando uma nova collection com varios documentos ao mesmo tempo:
+db.provas.insertMany([
+{ nome: "Nicolle", notas: [10, 8, 8] },
+{ nome: "Samuel", notas: [10,8, 8]}
+])
+
+Vendo os documentos:
+db.provas.find()
+
+
+Criando um documento com o proprio id:
+db.provas.insertOne({_id: "100", nome: "Leonardo", notas: [9, 7, 8]})
+
+Exibir collections:
+show collection
+
+Alterando um dado da lista usando update:
+db.provas.updateOne({ nome:"Nicolle"}, {$set: { notas: [10, 9, 8] } })
+
+Vendo os documentos apos a atualização:
+db.provas.find()
+
+adicionando o campo aprovado: true em todos os documentos ao mesmo tempo:
+db.provas.updateMany({}, { $set: { aprovado: true } })
+
+Vendo os documentos após a atualização:
+db.provas.find()
+
+Removendo um docuemnto espoecifico:
+db.provas.deleteOne({ nome: "Samuel" })
+
+Removendo todos os documentos:
+db.provas.deleteMany({})
+
+Deletando um collection:
+db.provas.drop()
+
+Exibindo collections:
+show collections
+
+Deletando mais uma collection:
+db.create.drop()
+
+Exibindo banco de dados:
+show dbs
+
+Acessando o banco:
+use crud
+
+Depois excluindo o banco acima que foi acessado:
+db.dropDatabase()
+
+Exibindo banco de dodos:
+show dbs
